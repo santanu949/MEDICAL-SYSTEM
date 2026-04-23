@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "code-review-graph": {
+      "command": "C:\\Users\\saanu\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\Scripts\\code-review-graph.exe",
+      "args": [
+        "serve",
+        "--repo",
+        "C:\\Users\\saanu\\MEDICAL-SYSTEM-main"
+      ],
+      "env": {
+        "PYTHONUTF8": "1"
+      },
+      "type": "stdio"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&display=swap');
+@import "tailwindcss";
+
+/* ─── Design System Tokens ───────────────────────────────────── */
+@theme {
+  --color-primary-brand:             #005f87;
+  --color-primary-bright:            #0077a8;
+  --color-on-primary:                #ffffff;
+  --color-primary-container:         #c8e8ff;
+  --color-on-primary-container:      #001e2e;
+
+  --color-secondary:                 #4e616d;
+  --color-secondary-container:       #d1e5f4;
+  --color-on-secondary-container:    #091e29;
+
+  --color-tertiary:                  #5e5b7e;
+  --color-tertiary-container:        #e4deff;
+  --color-on-tertiary-container:     #1a1738;
+
+  --color-error:                     #c0392b;
+  --color-error-container:           #ffdad6;
+  --color-on-error-container:        #410002;
+
+  --color-success:                   #1a7f5a;
+  --color-warning:                   #b45309;
+
+  /* Surfaces */
+  --color-background:                #eef2f7;
+  --color-on-background:             #14181c;
+  --color-surface:                   #f8fafd;
+  --color-on-surface:                #14181c;
+  --color-on-surface-variant:        #3c4349;
+
+  --color-surface-container-lowest:  #ffffff;
+  --color-surface-container-low:     #f0f4f8;
+  --color-surface-container:         #e4e9ee;
+  --color-surface-container-high:    #d8dde3;
+  --color-surface-container-highest: #ccd2d8;
+
+  --color-outline:                   #6c7379;
+  --color-outline-variant:           #bec5cc;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-on-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+
+  /* Premium mesh gradient background — no images */
+  background-color: #eef3f8;
+  background-image:
+    radial-gradient(ellipse 75% 55% at 8% 5%,  rgba(0, 95, 135, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 65% at 92% 95%, rgba(94, 91, 126, 0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 35% at 75% 8%,  rgba(0, 180, 155, 0.06) 0%, transparent 40%),
+    radial-gradient(ellipse 40% 30% at 25% 90%, rgba(0, 119, 168, 0.05) 0%, transparent 40%);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar         { width: 5px; height: 5px; }
+::-webkit-scrollbar-track   { background: transparent; }
+::-webkit-scrollbar-thumb   {
+  background: var(--color-outline-variant);
+  border-radius: 99px;
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-outline); }
+
+/* ─── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: rgba(0, 95, 135, 0.15);
+  color: var(--color-on-surface);
+}
+
+/* ─── Range input ────────────────────────────────────────────── */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 99px;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--color-primary-brand);
+  border: 2.5px solid white;
+  box-shadow: 0 2px 6px rgba(0, 95, 135, 0.35);
+  cursor: pointer;
+}
+
+/* ─── Focus ──────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-primary-brand);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ─── Glass card utility ─────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+/* ─── Transitions ────────────────────────────────────────────── */
+button, a { transition-property: color, background-color, border-color, box-shadow, opacity, transform; transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4,0,0.2,1); }
